@@ -7,6 +7,7 @@ from .serializers import RegisterSerializer, LoginSerializer
 # Create your views here.
 
 class RegisterView(APIView):
+    permission_classes = [AllowAny]
     def post(self, request):
         serializer = RegisterSerializer(data = request.data)
 

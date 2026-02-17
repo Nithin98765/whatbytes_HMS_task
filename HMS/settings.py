@@ -44,9 +44,11 @@ INSTALLED_APPS = [
     'patients',
     'doctors',
     'appointment',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -142,3 +144,29 @@ SIMPLE_JWT ={
 }
 
 AUTH_USER_MODEL = 'accounts.User'
+
+# CORS Configuration
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+
+# CSRF Configuration - Exempt API endpoints
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000', 'http://localhost:8000']
+CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_HTTPONLY = False
+
+# Session Configuration - Prevent Caching
+SESSION_SAVE_EVERY_REQUEST = True
+SESSION_COOKIE_SECURE = False
+SESSION_COOKIE_HTTPONLY = True
+
+# Cache Configuration - Disable for API
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/6.0/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
