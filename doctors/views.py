@@ -14,7 +14,7 @@ def create_doctor(request):
 
     if serializer.is_valid():
         serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response({"message":"Successfully created"}, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['GET'])
