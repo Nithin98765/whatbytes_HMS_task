@@ -5,8 +5,8 @@ urlpatterns = [
     path('create/', create_patient, name='create_patient'),
     path('list_patients/',list_patients, name='list-patients'),
     path('get_specific_patient/<int:pk>/',get_specific_patient, name="get_specific-patient"),
-    path("patients/<int:pk>/update/", update_patient, name="update-patient"),
-    path("patients/<int:pk>/delete/", delete_patient, name="delete-patient"),
+    path("update/<int:pk>/", update_patient, name="update-patient"),
+    path("delete/<int:pk>/", delete_patient, name="delete-patient"),
 
 
 ]
