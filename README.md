@@ -456,14 +456,4 @@ python manage.py collectstatic
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
 
-This project is for educational purposes.
-
-## 📧 Contact
-
-For any queries or issues, please contact the development team.
-
----
-
-**Happy Coding! 🎉**
